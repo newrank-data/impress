@@ -10,7 +10,7 @@
         :rowKey="record => record.subdomain"
         :dataSource="subs"
         :pagination="false"
-        :scroll="{ y: 540 }"
+        :scroll="{ y: 380 }"
         :loading="loading"
       >
         <template slot="title">

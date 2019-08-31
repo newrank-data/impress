@@ -1,6 +1,6 @@
 <template>
   <div style="padding-top: 48px;">
-    <div style="position: fixed; width: 100%; top: 0; background-color: #fff;">
+    <div style="position: fixed; width: 100%; top: 0; background-color: #fff; z-index: 1000;">
       <a-menu
         v-model="current"
         mode="horizontal"
