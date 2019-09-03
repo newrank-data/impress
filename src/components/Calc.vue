@@ -539,7 +539,6 @@ export default {
     },
     async getDomain (domain) {
       const url = `https://nr-impress.herokuapp.com/domain/${domain}`;
-      // const url = `http://localhost:3000/domain/${domain}`;
       try {
         const result = await this.$ax(url);
         const resultData = result.data;
