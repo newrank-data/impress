@@ -141,7 +141,7 @@ export default {
       this.logs = [];
       this.progressPercent = 0;
       this.progressStatus = 'active';
-      this.pushLog('开始读取数据表，请耐心等待...')
+      this.pushLog('⌛️ 开始读取数据表，请耐心等待...')
       this.startLoading = true;
       this.readAndStoreDataTable();
     },
@@ -436,12 +436,13 @@ export default {
 
       for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
+        this.progressPercent = 75 + Math.ceil((i / rows.length) * 15);
 
         // current 保存临时主域名信息，减少请求次数，为空或不匹配时更新
         if (currentDomain == null || row.domain != currentDomain) {
           currentDomain = row.domain;
           currentDetails = await this.getDomain(row.domain);
-          await this.sleep(500);
+          await this.sleep(250);
 
           // 获取主域名请求失败，中断计算，不执行后续操作 
           if (currentDetails == -1) {
