@@ -436,7 +436,7 @@ export default {
 
       for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        this.progressPercent = 75 + Math.ceil((i / rows.length) * 15);
+        this.progressPercent = 75 + Math.floor((i / rows.length) * 15);
 
         // current 保存临时主域名信息，减少请求次数，为空或不匹配时更新
         if (currentDomain == null || row.domain != currentDomain) {
