@@ -442,7 +442,7 @@ export default {
         if (currentDomain == null || row.domain != currentDomain) {
           currentDomain = row.domain;
           currentDetails = await this.getDomain(row.domain);
-          await this.sleep(250);
+          await this.sleep(100);
 
           // 获取主域名请求失败，中断计算，不执行后续操作 
           if (currentDetails == -1) {
